@@ -1,0 +1,50 @@
+/* Base HTML CSS */
+body {
+    font-family: 'Lato', sans-serif;
+    overflow: scroll;
+    padding-top: 100px;
+}
+
+/* Navbar CSS */
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,1) !important;
+}
+.navbar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1;
+}
+.navbar-nav .nav-link:hover {
+    color: rgba(255,255,255,.5) !important;
+}
+
+
+/* Blog CSS */
+#blogtitle {
+    font-size: 6rem;
+}
+@media (min-width: 992px) {
+    #hometext {
+        font-size: 4rem;
+    }
+    #blogdetailtitle {
+        font-size: 5rem;
+    }
+}
+
+/* Paginator CSS */
+#paginator_alignment { 
+    width: 500px;
+    height: 100px;
+    position: all;
+    top: 400;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+} 
+#textformat { 
+    text-decoration: none;
+    margin: 0 0.5em;
+} 

@@ -1,0 +1,23 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center my-3">
+	<div class="col-5">
+		<h1 id="about-title" class="font-weight-bold text-center">About</h1>
+	</div>
+</div>
+
+<div class="row justify-content-center mb-3">
+	<div class="col-md-9 text-center">
+		<img src="{% static 'portfolio/about.jpg' %}" class="img-fluid">
+	</div>
+</div>
+<br>
+<p class='text-justify'>
+	Hello! I am a space materials/process engineer for L3Harris Technologies in San Diego, CA. I hold a B.S. in chemical engineering and an M.S. in microelectronic engineering from Rochester Institute of Technology. I have recently found a great interest in both programming and data science and have been eager in learning how to program successful solutions to exploratory data science pursuits. I began this journey in October 2018 when I expressed interest in being a small part of an R&D team at work for machine learning. While working on this team, I went from being a small part to becoming the technical lead in an effort to make image recognition software via scikit-learn. My passion for data grew from there and, in my spare time (especially during this pandemic), I have been learning more about Python, SQL, Python frameworks like Django (what this website is written with!), and more advanced AI/ML models via TensorFlow 2.0. I have successfully implemented these technologies in several personal projects and always find new ways to improve for other projects. Other than that, I am involved with a variety of activities outside of work/studies including hiking, biking, paddleboarding, video gaming, and just about anything I can nerd out about.
+</p>
+
+{% endblock %}

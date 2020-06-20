@@ -1,0 +1,63 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+
+{% for post in posts %}
+	<div class="row justify-content-center my-3">
+		<div class="col-md-10">
+			<a href="{% url 'blog:detail' post.id %}">
+			 	<h2>{{ post.title }}</h2>
+			</a>
+			<h5 class="text-muted">{{ post.date|date:'M d Y'|upper }}</h5>
+			<h4>{{ post.description|striptags|truncatechars:100 }}</h4>
+		</div>
+	</div>
+{% endfor %}
+
+<div id="paginator_alignment" class="row justify-content-center">
+	{% if posts.has_previous %}
+		<a id="textformat" href="?page=1">
+			<i class="fas fa-angle-double-left"></i>
+		</a>
+		<a id="textformat" href="?page={{ posts.previous_page_number }}">
+			<i class="fas fa-angle-left"></i>
+		</a>
+	{% else %}
+		<a id="textformat">
+			<i class="fas fa-angle-double-left"></i>
+		</a>
+		<a id="textformat">
+			<i class="fas fa-angle-left"></i>
+		</a>
+	{% endif %}
+
+	{% for num in posts.paginator.page_range %}
+		{% if posts.number == num %}	
+			<strong id="textformat">{{ num }}</strong>
+		{% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+			<a id="textformat" href="?page={{ num }}">{{ num }}</a>
+		{% endif %}
+	{% endfor %}
+
+	{% if posts.has_next %}
+		<a id="textformat" href="?page={{ posts.next_page_number }}">
+			<i class="fas fa-angle-right"></i>
+		</a>
+		<a id="textformat" href="?page={{ posts.paginator.num_pages }}">
+			<i class="fas fa-angle-double-right"></i>
+		</a>
+	{% else %}
+		<a id="textformat">
+			<i class="fas fa-angle-right"></i>
+		</a>
+		<a id="textformat">
+			<i class="fas fa-angle-double-right"></i>
+		</a>
+	{% endif %}
+</div>
+
+{% endblock %}
